@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClienteController {
     
 
-    @GetMapping("/cliente")
+    @GetMapping("/clientes")
     public String getCliente()
     {
         return "Vai retornar TODOS os clientes";
     }
 
-    @GetMapping("/cliente/{codigo}")
+    @GetMapping("/clientes/{codigo}")
         public String getCliente(@PathVariable int codigo){
         return "Vai retornar UM Cliente pelo codigo" + codigo;
     }
