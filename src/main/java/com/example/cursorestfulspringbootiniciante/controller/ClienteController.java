@@ -30,7 +30,7 @@ public class ClienteController {
         c2.nome = "Ana";
         c2.saldo = 581;
 
-        c3.codigo = 3;
+        c3.codigo = 100;
         c3.endereco = "Rua Z, 32";  
         c3.nome = "Carla";
         c3.saldo = 759;
@@ -46,8 +46,17 @@ public class ClienteController {
     }
 
     @GetMapping("/clientes/{codigo}")
-        public String getCliente(@PathVariable int codigo){
-        return "Vai retornar UM Cliente pelo codigo" + codigo;
+    public Cliente getCliente(@PathVariable int codigo){
+        
+        Cliente cli=null;
+        for(Cliente aux : clientes){
+            if(aux.codigo == codigo){
+                cli = aux;
+                break; 
+            }
+
+        }
+        return cli;
     }
 
 }
